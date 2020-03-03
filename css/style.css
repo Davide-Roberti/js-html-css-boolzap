@@ -36,6 +36,15 @@ body {
     height: 80px;
 }
 
+.upbar .icone {
+    margin-right: 20px;
+}
+
+.upbar .icone i {
+    font-size: 20px;
+    padding: 0 5px;
+}
+
 /* stilizzazione sezione contatti */
 
 .contacts-section {
@@ -44,10 +53,35 @@ body {
     float: left;
 }
 
+.contacts-section .upbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacts-section .upbar img {
+    width: 50px;
+    margin-left: 15px;
+}
+
 .contacts-section .notifiche {
-    width: 100%;
     height: 90px;
     background-color: lightgreen;
+    display: flex;
+    align-items: center;
+}
+
+.contacts-section .notifiche i {
+    font-size: 27px;
+    padding: 12px 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.contacts-section .notifiche a {
+    font-size: 12px;
 }
 
 .contacts-section .cerca-contatto {
@@ -63,7 +97,7 @@ body {
 }
 
 .barra-contatti {
-    height: 412px;
+    height: 413px;
     overflow: auto;
 }
 
@@ -107,4 +141,8 @@ span.orario {
     width: 68%;
     float: left;
     background-color: grey;
+}
+
+.message-section .upbar {
+    border-left: 1px solid grey;
 }
