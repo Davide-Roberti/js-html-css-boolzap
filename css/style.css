@@ -18,7 +18,7 @@ body {
 .background-upbar {
     height: 120px;
     width: 100%;
-    background-color: green;
+    background-color: #20b1aa;
     position: absolute;
 }
 
@@ -43,6 +43,7 @@ body {
 .upbar .icone i {
     font-size: 20px;
     padding: 0 5px;
+    color: #708090;
 }
 
 /* stilizzazione sezione contatti */
@@ -66,7 +67,7 @@ body {
 
 .contacts-section .notifiche {
     height: 90px;
-    background-color: lightgreen;
+    background-color: #87cefa;
     display: flex;
     align-items: center;
 }
@@ -78,15 +79,18 @@ body {
     border-radius: 50%;
     margin-left: 20px;
     margin-right: 10px;
+    color: #87cefa;
 }
+
 
 .contacts-section .notifiche a {
     font-size: 12px;
+    color: #696969;
 }
 
 .contacts-section .cerca-contatto {
     width: 100%;
-    background-color: lightgrey;
+    background-color: #f8f9fe;
     padding: 5px;
 }
 
@@ -108,7 +112,7 @@ body {
 }
 
 .barra-contatti .contatto:hover {
-    background-color: lightgrey;
+    background-color: #dcdcdc;
 }
 
 .barra-contatti .contatto img {
@@ -126,6 +130,7 @@ body {
 
 .contatto span {
     font-size: 11px;
+    color: #708090;
 }
 
 span.orario {
