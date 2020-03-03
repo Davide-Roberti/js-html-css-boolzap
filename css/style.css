@@ -60,7 +60,7 @@ body {
     align-items: center;
 }
 
-.contacts-section .upbar img {
+.upbar img {
     width: 50px;
     margin-left: 15px;
 }
@@ -128,7 +128,7 @@ body {
     transform: translateY(-50%);
 }
 
-.contatto span {
+.nome-contatto span {
     font-size: 11px;
     color: #708090;
 }
@@ -137,6 +137,8 @@ span.orario {
     float: right;
     margin-right: 10px;
     margin-top: 20px;
+    font-size: 11px;
+    color: #708090;
 }
 
 /* stilizzazione sezione messaggistica */
@@ -149,5 +151,17 @@ span.orario {
 }
 
 .message-section .upbar {
-    border-left: 1px solid grey;
+    border-left: 1px solid #708090;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contatto-attuale {
+    display: flex;
+    align-items: center;
+}
+
+.contatto-attuale .nome-contatto {
+    margin-left: 15px;
 }
