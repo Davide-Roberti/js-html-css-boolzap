@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
 body {
     background-color: lightgrey;
+    font-family: sans-serif;
 }
 
 .background-upbar {
@@ -35,7 +42,62 @@ body {
     height: 100%;
     width: 32%;
     float: left;
-    background-color: lightblue;
+}
+
+.contacts-section .notifiche {
+    width: 100%;
+    height: 90px;
+    background-color: lightgreen;
+}
+
+.contacts-section .cerca-contatto {
+    width: 100%;
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+.cerca-contatto input {
+    width: 100%;
+    padding: 5px 5px;
+    border: none;
+}
+
+.barra-contatti {
+    height: 412px;
+    overflow: auto;
+}
+
+.barra-contatti .contatto {
+    background-color: white;
+    position: relative;
+    border-bottom: 1px solid lightgrey;
+}
+
+.barra-contatti .contatto:hover {
+    background-color: lightgrey;
+}
+
+.barra-contatti .contatto img {
+    width: 70px;
+    padding: 7px;
+    float: left;
+}
+
+.contatto .nome-contatto {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+}
+
+.contatto span {
+    font-size: 11px;
+}
+
+span.orario {
+    float: right;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 /* stilizzazione sezione messaggistica */
