@@ -3,3 +3,46 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: lightgrey;
+}
+
+.background-upbar {
+    height: 120px;
+    width: 100%;
+    background-color: green;
+    position: absolute;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    height: 94vh;
+    position: relative;
+    top: 3vh;
+}
+
+.upbar {
+    background-color: lightgrey;
+    width: 100%;
+    height: 80px;
+}
+
+/* stilizzazione sezione contatti */
+
+.contacts-section {
+    height: 100%;
+    width: 32%;
+    float: left;
+    background-color: lightblue;
+}
+
+/* stilizzazione sezione messaggistica */
+
+.message-section {
+    height: 100%;
+    width: 68%;
+    float: left;
+    background-color: grey;
+}
