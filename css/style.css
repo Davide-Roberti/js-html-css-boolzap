@@ -166,6 +166,58 @@ span.orario {
     margin-left: 15px;
 }
 
+.message-section .main-section {
+    height: calc(100% - 150px);
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2FrEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png%3Fwidth%3D700%26auto%3Dwebp%26s%3Db9cb52f0a75c14a2a4f0dda83382a525aea36b27&f=1&nofb=1");
+}
+
+.main-section .container-messaggi {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0 10px;
+}
+
+.container-messaggi .message {
+    margin-bottom: 10px;
+}
+
+.message .insieme-messaggio {
+    position: relative;
+    padding: 13px 18px 16px;
+    border-radius: 10px;
+}
+
+.sent .insieme-messaggio {
+    background-color: #99fb98;
+}
+
+.received .insieme-messaggio {
+    background-color: white;
+}
+
+.container-messaggi .message span.true-message {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.received {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message span.orario-messaggio {
+    font-size: 10px;
+    color: #708090;
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+}
+
 .message-section .input-section {
     background-color: #f5f5f5;
     height: 70px;
