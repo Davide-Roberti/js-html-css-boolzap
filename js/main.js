@@ -1,12 +1,16 @@
 $(document).ready(function(){
     $('.invio').click(function(){
+        invioMessaggio();
+    });
+
+    function invioMessaggio () {
         var messageText = $('#testo-messaggio').val();
         $('#testo-messaggio').val('');
         var messaggioTipo = $('.template-messaggio .message').clone().addClass('sent');
         messaggioTipo.find('.true-message').text(messageText);
         messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
         $('.container-messaggi').append(messaggioTipo);
-    });
+    };
 
     function orarioAttuale () {
         var data = new Date();
