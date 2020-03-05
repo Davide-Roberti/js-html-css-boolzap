@@ -234,3 +234,7 @@ span.orario {
     margin: 0 20px;
     width: 80%
 }
+
+.template-messaggio {
+    display: none;
+}

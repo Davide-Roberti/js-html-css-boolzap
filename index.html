@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boolzap</title>
         <script src="https://kit.fontawesome.com/fb0ae73ee5.js" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -135,10 +136,20 @@
                 </div>
                 <div class="input-section">
                     <i class="far fa-smile"></i>
-                    <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
+                    <input id="testo-messaggio" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone invio"></i>
+                </div>
+                <div class="template-messaggio">
+                    <div class="message">
+                        <div class="insieme-messaggio">
+                            <span class="true-message">messaggio</span>
+                            <span class="orario-messaggio">orario</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script src="js/main.js" charset="utf-8"></script>
     </body>
 </html>
