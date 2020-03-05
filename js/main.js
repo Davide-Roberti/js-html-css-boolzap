@@ -1,14 +1,34 @@
 $(document).ready(function(){
     $('.invio').click(function(){
         invioMessaggio();
-        setTimeout(messaggioRicevuto, 1000);
+        autoScrolla();
+        setTimeout(function() {
+            messaggioRicevuto();
+            autoScrolla();
+        }, 1000);
     });
 
     $('#testo-messaggio').keyup(function(event) {
         if(event.keyCode === 13) {
             invioMessaggio();
-            setTimeout(messaggioRicevuto, 1000);
+            autoScrolla();
+            setTimeout(function() {
+                messaggioRicevuto();
+                autoScrolla();
+            }, 1000);
         };
+    });
+
+    $('#strumento-ricerca').keyup(function(event) {
+        var carattereDigitato = $(this).val().toLowerCase();
+        console.log(carattereDigitato);
+        $('.barra-contatti .contatto').each(function() {
+            if ($(this).find('h5').text().toLowerCase().includes(carattereDigitato)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            };
+        });
     });
 
     function invioMessaggio () {
@@ -42,4 +62,9 @@ $(document).ready(function(){
         }
         return i;
     }
+
+    function autoScrolla() {
+      var fondoPagina = document.getElementById('scroll-down');
+      fondoPagina.scrollTop = fondoPagina.scrollHeight;
+    };
 });
