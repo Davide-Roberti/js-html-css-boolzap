@@ -1,8 +1,14 @@
 $(document).ready(function(){
     $('.invio').click(function(){
         invioMessaggio();
+        setTimeout(messaggioRicevuto, 1000);
+    });
 
-        setTimeout(messaggioRicevuto, 1000); 
+    $('#testo-messaggio').keyup(function(event) {
+        if(event.keyCode === 13) {
+            invioMessaggio();
+            setTimeout(messaggioRicevuto, 1000);
+        };
     });
 
     function invioMessaggio () {
