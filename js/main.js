@@ -1,22 +1,12 @@
 $(document).ready(function(){
     $('.invio').click(function(){
-        invioMessaggio();
-        autoScrolla();
-        setTimeout(function() {
-            messaggioRicevuto();
-            autoScrolla();
-        }, 1000);
+        generaMessaggi();
     });
 
     $('#testo-messaggio').keyup(function(event) {
         if(event.keyCode === 13) {
-            invioMessaggio();
-            autoScrolla();
-            setTimeout(function() {
-                messaggioRicevuto();
-                autoScrolla();
-            }, 1000);
-        };
+            generaMessaggi();
+        }
     });
 
     $('#strumento-ricerca').keyup(function(event) {
@@ -31,19 +21,21 @@ $(document).ready(function(){
         });
     });
 
-    function invioMessaggio () {
-        var messageText = $('#testo-messaggio').val();
-        $('#testo-messaggio').val('');
-        var messaggioTipo = $('.template-messaggio .message').clone().addClass('sent');
-        messaggioTipo.find('.true-message').text(messageText);
-        messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
-        $('.container-messaggi').append(messaggioTipo);
-    };
+    function generaMessaggi () {
+            var messageText = $('#testo-messaggio').val();
+            $('#testo-messaggio').val('')
+            messaggioCreate(messageText, 'sent');
+            autoScrolla();
+            setTimeout(function() {
+                messaggioCreate('vabbé', 'received');
+                autoScrolla();
+            }, 1000);
+    }
 
-    function messaggioRicevuto () {
+    function messaggioCreate (testoMessaggio, classeMessaggio) {
         var messageText = 'Vabbé'
-        var messaggioTipo = $('.template-messaggio .message').clone().addClass('received');
-        messaggioTipo.find('.true-message').text(messageText);
+        var messaggioTipo = $('.template-messaggio .message').clone().addClass(classeMessaggio);
+        messaggioTipo.find('.true-message').text(testoMessaggio);
         messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
         $('.container-messaggi').append(messaggioTipo);
     };
