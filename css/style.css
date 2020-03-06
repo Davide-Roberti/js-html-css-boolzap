@@ -115,6 +115,10 @@ body {
     background-color: #dcdcdc;
 }
 
+.contatto-selezionato {
+    background-color: #dcdcdc;
+}
+
 .barra-contatti .contatto img {
     width: 70px;
     padding: 7px;

@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $('div.contatto').click(function() {
+    $('.barra-contatti div.contatto').click(function() {
+        $('div.contatto').removeClass('contatto-selezionato');
+        $(this).addClass('contatto-selezionato');
         var identificativoContatto = $(this).data('codiceUtente');
         $('div.container-messaggi').each(function() {
             if(identificativoContatto == $(this).data('codiceUtente')) {
