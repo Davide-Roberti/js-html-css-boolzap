@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    $('div.contatto').click(function() {
+        var identificativoContatto = $(this).data('codiceUtente');
+        $('div.container-messaggi').each(function() {
+            if(identificativoContatto == $(this).data('codiceUtente')) {
+            $('div.container-messaggi').removeClass('active');
+            $(this).addClass('active');
+            }
+        });
+    });
+
     $('.invio').click(function(){
         generaMessaggi();
     });
@@ -45,7 +55,7 @@ $(document).ready(function(){
         var messaggioTipo = $('.template-messaggio .message').clone().addClass(classeMessaggio);
         messaggioTipo.find('.true-message').text(testoMessaggio);
         messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
-        $('.container-messaggi').append(messaggioTipo);
+        $('.container-messaggi.active').append(messaggioTipo);
     }
 
     function orarioAttuale () {
