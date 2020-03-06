@@ -17,8 +17,14 @@ $(document).ready(function(){
                 $(this).show();
             } else {
                 $(this).hide();
-            };
+            }
         });
+    });
+
+    $('#testo-messaggio').focus(function() {
+        $('#icona-invio').toggleClass('fa fa-microphone fas fa-paper-plane');
+    }).blur(function () {
+        $('#icona-invio').toggleClass('fa fa-microphone fas fa-paper-plane');
     });
 
     function generaMessaggi () {
@@ -38,7 +44,7 @@ $(document).ready(function(){
         messaggioTipo.find('.true-message').text(testoMessaggio);
         messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
         $('.container-messaggi').append(messaggioTipo);
-    };
+    }
 
     function orarioAttuale () {
         var data = new Date();
@@ -58,5 +64,5 @@ $(document).ready(function(){
     function autoScrolla() {
       var fondoPagina = document.getElementById('scroll-down');
       fondoPagina.scrollTop = fondoPagina.scrollHeight;
-    };
+    }
 });
