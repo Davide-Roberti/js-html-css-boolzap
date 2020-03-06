@@ -30,12 +30,14 @@ $(document).ready(function(){
     function generaMessaggi () {
             var messageText = $('#testo-messaggio').val();
             $('#testo-messaggio').val('')
-            messaggioCreate(messageText, 'sent');
-            autoScrolla();
-            setTimeout(function() {
-                messaggioCreate('vabbé', 'received');
+            if (messageText.trim().length > 0) {
+                messaggioCreate(messageText, 'sent');
                 autoScrolla();
-            }, 1000);
+                setTimeout(function() {
+                    messaggioCreate('vabbé', 'received');
+                    autoScrolla();
+                }, 1000);
+            }
     }
 
     function messaggioCreate (testoMessaggio, classeMessaggio) {
