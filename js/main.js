@@ -5,8 +5,6 @@ $(document).ready(function(){
         var identificativoContatto = $(this).data('codiceUtente');
         var nomeUtente = $(this).find('h5').text();
         var immagineProfilo = $(this).children('img').attr('src');
-        console.log(nomeUtente);
-        console.log(immagineProfilo);
         $('div.contatto-attuale').children('img').attr('src', immagineProfilo);
         $('div.contatto-attuale').find('h5').text(nomeUtente);
         $('div.container-messaggi').each(function() {
@@ -26,6 +24,16 @@ $(document).ready(function(){
             generaMessaggi();
         }
     });
+
+    $(document).on('click', '.insieme-messaggio .apri-menu', function(){
+        $('.menu-finestrella').removeClass('menu-attivo');
+        $(this).children('.menu-finestrella').addClass('menu-attivo');
+    });
+
+    $(document).on('click', '.erase', function(){
+        $(this).parentsUntil('.message').addClass('cancellato');
+    });
+
 
     $('#strumento-ricerca').keyup(function(event) {
         var carattereDigitato = $(this).val().toLowerCase();

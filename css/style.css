@@ -203,11 +203,50 @@ span.orario {
 
 .received .insieme-messaggio {
     background-color: white;
+    position: relative;
 }
 
 .container-messaggi .message span.true-message {
     font-size: 13px;
     font-weight: bold;
+}
+
+.container-messaggi .message .insieme-messaggio .apri-menu {
+    display: inline-block;
+}
+
+.container-messaggi .message .insieme-messaggio i {
+    font-size: 13px;
+    margin-left: 5px;
+    color: grey;
+}
+
+.menu-finestrella {
+    font-size: 13px;
+    line-height: 25px;
+    border: 1px solid grey;
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    background-color: white;
+    z-index: 999;
+    width: 160px;
+    top: 35px;
+    display: none;
+    right: -5px;
+}
+
+.menu-finestrella p:last-child:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.apri-menu .menu-finestrella.menu-attivo {
+    display: block;
+}
+
+.cancellato {
+    display: none;
 }
 
 .sent {
