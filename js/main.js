@@ -3,6 +3,12 @@ $(document).ready(function(){
         $('div.contatto').removeClass('contatto-selezionato');
         $(this).addClass('contatto-selezionato');
         var identificativoContatto = $(this).data('codiceUtente');
+        var nomeUtente = $(this).find('h5').text();
+        var immagineProfilo = $(this).children('img').attr('src');
+        console.log(nomeUtente);
+        console.log(immagineProfilo);
+        $('div.contatto-attuale').children('img').attr('src', immagineProfilo);
+        $('div.contatto-attuale').find('h5').text(nomeUtente);
         $('div.container-messaggi').each(function() {
             if(identificativoContatto == $(this).data('codiceUtente')) {
             $('div.container-messaggi').removeClass('active');
