@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boolzap</title>
         <script src="https://kit.fontawesome.com/fb0ae73ee5.js" crossorigin="anonymous"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -167,7 +168,7 @@
                     <input id="testo-messaggio" placeholder="Scrivi un messaggio">
                     <i id="icona-invio" class="fas fa-microphone invio"></i>
                 </div>
-                <div class="template-messaggio">
+                <!-- <div class="template-messaggio">
                     <div class="message">
                         <div class="insieme-messaggio">
                             <span class="true-message">messaggio</span>
@@ -181,9 +182,24 @@
                             <span class="orario-messaggio">orario</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
+        <script id="messaggio-template" type="text/x-handlebars-template">
+            <div class="message {{messageKind}}">
+                <div class="insieme-messaggio">
+                    <span class="true-message">{{messageText}}</span>
+                    <div class="apri-menu">
+                        <i class="fas fa-angle-down"></i>
+                        <div class="menu-finestrella">
+                            <p>Info messaggio</p>
+                            <p class="erase">Cancella messaggio</p>
+                        </div>
+                    </div>
+                    <span class="orario-messaggio">17.00</span>
+                </div>
+            </div>
+		</script>
 
         <script src="js/main.js" charset="utf-8"></script>
     </body>

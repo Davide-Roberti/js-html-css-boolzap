@@ -1,4 +1,19 @@
 $(document).ready(function(){
+    var source = $('#messaggio-template').html();
+    var template = Handlebars.compile(source);
+
+    function messaggioCreate(testoMessaggio, classeMessaggio) {
+        var composizioneMessaggio = {
+            messageText: testoMessaggio,
+            messageKind: classeMessaggio
+        };
+        var templateMessaggio = template(composizioneMessaggio);
+         $('.container-messaggi.active').append(templateMessaggio);
+    }
+
+
+
+
     $('.barra-contatti div.contatto').click(function() {
         $('div.contatto').removeClass('contatto-selezionato');
         $(this).addClass('contatto-selezionato');
@@ -66,13 +81,13 @@ $(document).ready(function(){
             }
     }
 
-    function messaggioCreate (testoMessaggio, classeMessaggio) {
-        var messageText = 'Vabbé'
-        var messaggioTipo = $('.template-messaggio .message').clone().addClass(classeMessaggio);
-        messaggioTipo.find('.true-message').text(testoMessaggio);
-        messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
-        $('.container-messaggi.active').append(messaggioTipo);
-    }
+    // function messaggioCreate (testoMessaggio, classeMessaggio) {
+    //     var messageText = 'Vabbé'
+    //     var messaggioTipo = $('.template-messaggio .message').clone().addClass(classeMessaggio);
+    //     messaggioTipo.find('.true-message').text(testoMessaggio);
+    //     messaggioTipo.find('.orario-messaggio').text(orarioAttuale);
+    //     $('.container-messaggi.active').append(messaggioTipo);
+    // }
 
     function orarioAttuale () {
         var data = new Date();
