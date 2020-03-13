@@ -2,13 +2,109 @@ $(document).ready(function(){
     var source = $('#messaggio-template').html();
     var template = Handlebars.compile(source);
 
-    function messaggioCreate(testoMessaggio, classeMessaggio) {
+    function messaggioCreate(testoMessaggio, classeMessaggio, selettoreConversazione) {
         var composizioneMessaggio = {
             messageText: testoMessaggio,
             messageKind: classeMessaggio
         };
         var templateMessaggio = template(composizioneMessaggio);
-         $('.container-messaggi.active').append(templateMessaggio);
+         $(selettoreConversazione).append(templateMessaggio);
+    }
+
+    var messaggiArchiviati = {
+        c0: [
+            {
+                messageText: 'hey Gino, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c1: [
+            {
+                messageText: 'hey Piero, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c2: [
+            {
+                messageText: 'hey Ugo, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c3: [
+            {
+                messageText: 'hey Jessica, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c4: [
+            {
+                messageText: 'hey Lina, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c5: [
+            {
+                messageText: 'hey Pina, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c6: [
+            {
+                messageText: 'hey Esmeralda, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'non male zio',
+                messageKind: 'received'
+            }
+        ],
+        c7: [
+            {
+                messageText: 'hey Harry, come va?',
+                messageKind: 'sent'
+            },
+            {
+                messageText: 'mi fa male la cicatrice',
+                messageKind: 'received'
+            }
+        ],
+    };
+
+    for (var convKey in messaggiArchiviati) {
+        var indiceConversazione = convKey[1];
+        console.log(indiceConversazione);
+        for (var i = 0; i < convKey.length; i++) {
+            var oggettoMessaggio = messaggiArchiviati[convKey][i];
+            var messageText = oggettoMessaggio.messageText;
+            var messageKind = oggettoMessaggio.messageKind;
+
+            var selettoreConversazione = $('.container-messaggi[data-codice-utente="' + indiceConversazione + '"]');
+                messaggioCreate(messageText, messageKind, selettoreConversazione);
+        }
     }
 
 
