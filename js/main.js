@@ -11,6 +11,62 @@ $(document).ready(function(){
          $(selettoreConversazione).append(templateMessaggio);
     }
 
+    var sourceContatti = $('#contatto-template').html();
+    var templateContatto = Handlebars.compile(sourceContatti);
+
+
+    var listaContatti = [
+        {
+            numeroConversazione: 0,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F512x512%2F2016%2F08%2F18%2F810272_user_512x512.png&f=1&nofb=1',
+            nomeContatto: 'Gino'
+        },
+        {
+            numeroConversazione: 1,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F2016%2F09%2F01%2F822747_user_512x512.png&f=1&nofb=1',
+            nomeContatto: 'Piero'
+        },
+        {
+            numeroConversazione: 2,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fptetutorials.com%2Fimages%2Fuser-profile.png&f=1&nofb=1',
+            nomeContatto: 'Ugo'
+        },
+        {
+            numeroConversazione: 3,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F2016%2F09%2F01%2F822727_user_512x512.png&f=1&nofb=1',
+            nomeContatto: 'Jessica'
+        },
+        {
+            numeroConversazione: 4,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Favatars-1-5%2F136%2F87-512.png&f=1&nofb=1',
+            nomeContatto: 'Lina'
+        },
+        {
+            numeroConversazione: 5,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F146%2F146025.png&f=1&nofb=1',
+            nomeContatto: 'Pina'
+        },
+        {
+            numeroConversazione: 6,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F2016%2F09%2F01%2F822739_user_512x512.png&f=1&nofb=1',
+            nomeContatto: 'Esmeralda'
+        },
+        {
+            numeroConversazione: 7,
+            linkImmagine: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Nuy39yqcMREaqhbbevS-YgHaHa%26pid%3DApi&f=1',
+            nomeContatto: 'Harry'
+        }
+    ];
+
+    // console.log(listaContatti.length);
+    for (var i = 0; i < listaContatti.length; i++) {
+        var contattoTipo = templateContatto(listaContatti[i]);
+        // console.log(contattoTipo);
+        $('.barra-contatti').append(contattoTipo);
+    }
+
+
+
     var messaggiArchiviati = {
         c0: [
             {
